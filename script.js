@@ -1,29 +1,30 @@
-var totalScore = 0;
-var totalPar = 0;
-var numberOfHolesToPlay = 0;
-var userName = prompt("Welcome to Grand Circus mini golf! What is your name?");
+let userName = prompt("Welcome to GC Mini Golf! What is your name?");
 console.log(userName);
 
-numberOfHolesToPlay = parseInt(prompt("Hello " + userName + ", would you like to play 3 or 6 holes?"));
-totalPar = (3*numberOfHolesToPlay);
-console.log(numberOfHolesToPlay);
+let totalFinalScore = 0;
+let totalPar = 0;
+let numberHolesOfGolf = 0;
 
-for (let i = 0; i < numberOfHolesToPlay; i++){
-    totalScore = totalScore + parseInt(prompt("How many putts for hole " + (i+1) + "? (par 3)"));
+numberHolesOfGolf = parseInt(prompt(userName + ", would you like to play 3 or 6 holes of mini golf?"));
+totalPar = (3*numberHolesOfGolf);
+console.log(numberHolesOfGolf);
+
+for (let i = 0; i < numberHolesOfGolf; i++){
+    totalFinalScore = totalFinalScore + parseInt(prompt("How many putts for hole " + (i+1) + "? (par 3)"));
 };
 
-totalComparedToPar = totalScore - totalPar;
+totalComparedToPar = totalFinalScore - totalPar;
 console.log(totalComparedToPar);
 
 if (totalComparedToPar === totalPar){
-    alert("Good game, " + userName + " . Your total par was " + totalComparedToPar);
-    console.log("Good game, " + userName + " . Your total par was " + totalComparedToPar);
+    alert("Great game! " + userName + " Your total par was " + totalComparedToPar);
+    console.log("Great game! " + userName + " Your total par was " + totalComparedToPar);
 }
 else if (totalComparedToPar > totalPar){
-    alert("Nice Try, " + userName + "! Your total par was " + totalComparedToPar);
-    console.log("Nice Try, " + userName + "! Your total par was " + totalComparedToPar);
+    alert("Nice Try, " + userName + " Your total par was " + totalComparedToPar);
+    console.log("Nice Try, " + userName + " Your total par was " + totalComparedToPar);
 }
 else if (totalComparedToPar < totalPar){
-    alert("Great job, " + userName + " . Your total par was " + totalComparedToPar);
-    console.log("Great job, " + userName + ". Your total par was " + totalComparedToPar);
+    alert("Great job! " + userName + " Your total par was " + totalComparedToPar);
+    console.log("Great job! " + userName + " Your total par was " + totalComparedToPar);
 }
